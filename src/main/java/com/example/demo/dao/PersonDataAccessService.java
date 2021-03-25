@@ -26,7 +26,7 @@ public class PersonDataAccessService implements PersonDao {
 
     @Override
     public List<Person> selectAllPeople() {
-        final String sql = "SELECT id, name FROM person";
+        final String sql = "SELECT id, name FROM person ORDER BY name DESC";
         return jdbcTemplate.query(
                 sql,
                 (resultSet, i) -> { // raw mapper
